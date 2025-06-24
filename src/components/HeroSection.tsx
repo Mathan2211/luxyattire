@@ -1,100 +1,107 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, Sparkles } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-luxury-cream via-white to-luxury-cream"></div>
-      
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-luxury-gold/10 rounded-full blur-xl"></div>
-      <div className="absolute bottom-20 right-10 w-48 h-48 bg-luxury-charcoal/5 rounded-full blur-2xl"></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-luxury-cream via-white to-luxury-cream">
+      {/* Background decorative elements */}
+      <div className="absolute top-20 left-10 w-40 h-40 bg-luxury-pink/20 rounded-full blur-2xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-56 h-56 bg-luxury-teal/15 rounded-full blur-3xl animate-bounce-subtle"></div>
+      <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-luxury-navy/10 rounded-full blur-xl"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
           <div className="text-center lg:text-left space-y-8 animate-fade-in">
-            <div className="space-y-4">
-              <p className="text-luxury-gold font-medium tracking-wider uppercase text-sm">
-                Redefining Professional Style
-              </p>
-              <h1 className="text-5xl lg:text-7xl font-bold text-luxury-charcoal leading-tight text-shadow-luxury">
-                Elevated
-                <span className="block text-luxury-gold">T-Shirts</span>
-                <span className="block text-3xl lg:text-4xl font-light text-luxury-stone mt-2">
-                  for Modern Professionals
+            <div className="space-y-6">
+              <div className="flex items-center justify-center lg:justify-start gap-2">
+                <Sparkles className="w-5 h-5 text-luxury-pink animate-glow" />
+                <p className="text-luxury-pink font-semibold tracking-wider uppercase text-sm">
+                  Premium Fashion Forward
+                </p>
+              </div>
+              <h1 className="text-6xl lg:text-8xl font-bold leading-tight text-shadow-luxury">
+                <span className="text-luxury-charcoal">Luxe</span>
+                <span className="block text-luxury-pink bg-clip-text bg-gradient-to-r from-luxury-pink to-purple-600">T-Shirts</span>
+                <span className="block text-3xl lg:text-5xl font-light text-luxury-stone mt-4">
+                  Redefining Professional Style
                 </span>
               </h1>
-              <p className="text-xl text-luxury-stone max-w-xl">
-                Discover our curated collection of premium t-shirts designed specifically for young professionals who value both comfort and sophistication.
+              <p className="text-xl text-luxury-stone max-w-xl leading-relaxed">
+                Discover our exclusive collection of premium t-shirts crafted for modern professionals who demand both comfort and sophistication in their wardrobe.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
                 size="lg" 
-                className="bg-luxury-charcoal hover:bg-luxury-charcoal/90 text-white font-medium px-8 py-4 rounded-md transition-all duration-300 hover:scale-105"
+                className="bg-gradient-to-r from-luxury-pink to-purple-600 hover:from-purple-600 hover:to-luxury-pink text-white font-semibold px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                Shop Collection
+                Explore Collection
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-luxury-charcoal text-luxury-charcoal hover:bg-luxury-charcoal hover:text-white font-medium px-8 py-4 rounded-md transition-all duration-300"
+                className="border-2 border-luxury-charcoal text-luxury-charcoal hover:bg-luxury-charcoal hover:text-white font-semibold px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105"
               >
                 <Play className="mr-2 h-5 w-5" />
-                Watch Story
+                Brand Story
               </Button>
             </div>
 
-            {/* Social proof */}
-            <div className="flex items-center gap-8 text-sm text-luxury-stone justify-center lg:justify-start">
-              <div className="text-center">
-                <div className="font-bold text-luxury-charcoal text-2xl">25K+</div>
-                <div>Happy Professionals</div>
+            {/* Enhanced social proof */}
+            <div className="grid grid-cols-3 gap-6 text-center lg:text-left">
+              <div className="p-4 bg-white/80 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="font-bold text-luxury-pink text-3xl">50K+</div>
+                <div className="text-luxury-stone text-sm">Happy Customers</div>
               </div>
-              <div className="text-center">
-                <div className="font-bold text-luxury-charcoal text-2xl">4.9★</div>
-                <div>Customer Rating</div>
+              <div className="p-4 bg-white/80 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="font-bold text-luxury-teal text-3xl">4.9★</div>
+                <div className="text-luxury-stone text-sm">Average Rating</div>
               </div>
-              <div className="text-center">
-                <div className="font-bold text-luxury-charcoal text-2xl">100%</div>
-                <div>Sustainable Materials</div>
+              <div className="p-4 bg-white/80 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="font-bold text-luxury-navy text-3xl">100%</div>
+                <div className="text-luxury-stone text-sm">Eco-Friendly</div>
               </div>
             </div>
           </div>
 
-          {/* Right content - Hero image */}
+          {/* Right content - Enhanced Hero image */}
           <div className="relative animate-slide-up">
             <div className="relative">
-              {/* Main product image placeholder */}
-              <div className="aspect-[4/5] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl shadow-2xl hover-lift">
-                <div className="w-full h-full rounded-2xl bg-gradient-to-br from-luxury-charcoal/5 to-luxury-gold/5 flex items-center justify-center">
-                  <div className="text-center text-luxury-stone">
-                    <div className="text-6xl mb-4">👔</div>
-                    <p className="text-lg font-medium">Premium T-Shirt</p>
-                    <p className="text-sm">Professional Collection</p>
-                  </div>
-                </div>
+              {/* Main product image with real t-shirt image */}
+              <div className="aspect-[4/5] rounded-3xl shadow-2xl overflow-hidden hover-lift">
+                <img 
+                  src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80"
+                  alt="Premium T-Shirt Collection"
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
               
-              {/* Floating elements */}
-              <div className="absolute -top-6 -right-6 bg-white rounded-full p-4 shadow-lg animate-scale-in">
+              {/* Enhanced floating elements */}
+              <div className="absolute -top-8 -right-8 bg-white rounded-2xl p-6 shadow-xl animate-scale-in border border-luxury-pink/20">
                 <div className="text-center">
-                  <div className="text-luxury-gold font-bold">$89</div>
-                  <div className="text-xs text-luxury-stone">Premium Quality</div>
+                  <div className="text-2xl font-bold text-luxury-pink">$89</div>
+                  <div className="text-sm text-luxury-stone">Premium Quality</div>
+                  <div className="text-xs text-luxury-pink font-medium">Limited Edition</div>
                 </div>
               </div>
               
-              <div className="absolute -bottom-6 -left-6 bg-luxury-gold rounded-full p-4 shadow-lg animate-scale-in">
+              <div className="absolute -bottom-8 -left-8 bg-gradient-to-r from-luxury-teal to-luxury-navy rounded-2xl p-6 shadow-xl animate-scale-in">
                 <div className="text-center text-white">
-                  <div className="font-bold">NEW</div>
-                  <div className="text-xs">Collection</div>
+                  <div className="text-lg font-bold">NEW</div>
+                  <div className="text-sm">2024 Collection</div>
+                  <div className="text-xs opacity-90">Just Arrived</div>
                 </div>
+              </div>
+
+              {/* Additional floating badge */}
+              <div className="absolute top-6 left-6 bg-luxury-pink text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg animate-bounce-subtle">
+                Best Seller
               </div>
             </div>
           </div>

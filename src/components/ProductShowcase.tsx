@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
-import { Heart, Eye, ShoppingCart, Star, Zap } from 'lucide-react';
+import { Heart, Eye, ShoppingCart, Star, Zap, Sparkles, ArrowRight } from 'lucide-react';
 
 interface Product {
   id: number;
@@ -33,10 +32,10 @@ const ProductShowcase = () => {
       originalPrice: 120,
       rating: 4.9,
       reviews: 127,
-      colors: ['#2C2C2C', '#FFFFFF', '#1E3A8A', '#059669'],
+      colors: ['#1E1E1E', '#FFFFFF', '#1E3A8A', '#0D9488'],
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       badge: "Best Seller",
-      image: "premium-charcoal",
+      image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       isBestseller: true
     },
     {
@@ -47,7 +46,7 @@ const ProductShowcase = () => {
       reviews: 89,
       colors: ['#FFFFFF', '#F3F4F6', '#E5E7EB'],
       sizes: ['S', 'M', 'L', 'XL'],
-      image: "minimalist-white",
+      image: "https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       isNew: true
     },
     {
@@ -59,7 +58,7 @@ const ProductShowcase = () => {
       colors: ['#1F2937', '#374151', '#6B7280'],
       sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       badge: "Limited Edition",
-      image: "urban-gray"
+      image: "https://images.unsplash.com/photo-1583743814966-8936f37f4576?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
     },
     {
       id: 4,
@@ -70,15 +69,15 @@ const ProductShowcase = () => {
       colors: ['#065F46', '#047857', '#059669'],
       sizes: ['S', 'M', 'L', 'XL'],
       badge: "Eco-Friendly",
-      image: "sustainable-green"
+      image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
     }
   ];
 
   const colorNames: { [key: string]: string } = {
-    '#2C2C2C': 'Charcoal',
+    '#1E1E1E': 'Charcoal',
     '#FFFFFF': 'White',
     '#1E3A8A': 'Navy',
-    '#059669': 'Forest',
+    '#0D9488': 'Teal',
     '#F3F4F6': 'Light Gray',
     '#E5E7EB': 'Silver',
     '#1F2937': 'Graphite',
@@ -86,6 +85,7 @@ const ProductShowcase = () => {
     '#6B7280': 'Steel',
     '#065F46': 'Deep Forest',
     '#047857': 'Emerald',
+    '#059669': 'Forest'
   };
 
   const ProductCard = ({ product }: { product: Product }) => {
@@ -93,64 +93,66 @@ const ProductShowcase = () => {
 
     return (
       <div 
-        className="group relative bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden hover-lift"
+        className="group relative bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden hover-lift border border-gray-100"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Product Image */}
-        <div className="relative aspect-[4/5] bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
-          <div className="w-full h-full bg-gradient-to-br from-luxury-cream to-white flex items-center justify-center">
-            <div className="text-center text-luxury-stone">
-              <div className="text-4xl mb-2">👕</div>
-              <p className="text-sm font-medium">{product.name}</p>
-            </div>
-          </div>
+        <div className="relative aspect-[4/5] overflow-hidden rounded-t-2xl">
+          <img 
+            src={product.image} 
+            alt={product.name}
+            className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+          />
+          
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           
           {/* Badges */}
-          <div className="absolute top-3 left-3 space-y-2">
+          <div className="absolute top-4 left-4 space-y-2">
             {product.isNew && (
-              <Badge className="bg-luxury-gold text-white">NEW</Badge>
+              <Badge className="bg-gradient-to-r from-luxury-pink to-purple-600 text-white border-0 font-semibold">
+                <Sparkles className="w-3 h-3 mr-1" />
+                NEW
+              </Badge>
             )}
             {product.isBestseller && (
-              <Badge className="bg-luxury-charcoal text-white">
+              <Badge className="bg-gradient-to-r from-luxury-teal to-luxury-navy text-white border-0 font-semibold">
                 <Star className="w-3 h-3 mr-1" />
                 Best Seller
               </Badge>
             )}
             {product.badge && !product.isNew && !product.isBestseller && (
-              <Badge variant="secondary">{product.badge}</Badge>
+              <Badge className="bg-white/90 text-luxury-charcoal border-0 font-semibold">{product.badge}</Badge>
             )}
           </div>
 
           {/* Quick Actions */}
-          <div className={`absolute top-3 right-3 space-y-2 transition-all duration-300 ${isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
-            <Button size="sm" variant="secondary" className="rounded-full w-10 h-10 p-0 bg-white/90 hover:bg-white">
-              <Heart className="w-4 h-4" />
+          <div className={`absolute top-4 right-4 space-y-2 transition-all duration-300 ${isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
+            <Button size="sm" variant="secondary" className="rounded-full w-10 h-10 p-0 bg-white/95 hover:bg-white shadow-lg">
+              <Heart className="w-4 h-4 text-luxury-pink" />
             </Button>
             <Dialog>
               <DialogTrigger asChild>
                 <Button 
                   size="sm" 
                   variant="secondary" 
-                  className="rounded-full w-10 h-10 p-0 bg-white/90 hover:bg-white"
+                  className="rounded-full w-10 h-10 p-0 bg-white/95 hover:bg-white shadow-lg"
                   onClick={() => {
                     setSelectedProduct(product);
                     setSelectedColor(product.colors[0]);
                     setSelectedSize(product.sizes[0]);
                   }}
                 >
-                  <Eye className="w-4 h-4" />
+                  <Eye className="w-4 h-4 text-luxury-teal" />
                 </Button>
               </DialogTrigger>
             </Dialog>
           </div>
-
-          {/* Hover overlay */}
-          <div className={`absolute inset-0 bg-black/20 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
           
           {/* Quick Add to Cart */}
           <div className={`absolute bottom-4 left-4 right-4 transition-all duration-300 ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            <Button className="w-full bg-white text-luxury-charcoal hover:bg-luxury-charcoal hover:text-white">
+            <Button className="w-full bg-gradient-to-r from-luxury-pink to-purple-600 hover:from-purple-600 hover:to-luxury-pink text-white border-0 rounded-xl font-semibold shadow-lg">
               <ShoppingCart className="w-4 h-4 mr-2" />
               Quick Add
             </Button>
@@ -160,20 +162,20 @@ const ProductShowcase = () => {
         {/* Product Info */}
         <div className="p-6 space-y-4">
           <div>
-            <h3 className="font-semibold text-luxury-charcoal text-lg group-hover:text-luxury-gold transition-colors duration-200">
+            <h3 className="font-bold text-luxury-charcoal text-lg group-hover:text-luxury-pink transition-colors duration-300">
               {product.name}
             </h3>
-            <div className="flex items-center gap-2 mt-1">
+            <div className="flex items-center gap-2 mt-2">
               <div className="flex items-center gap-1">
                 <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                <span className="text-sm text-luxury-stone">{product.rating}</span>
+                <span className="text-sm font-semibold text-luxury-stone">{product.rating}</span>
               </div>
               <span className="text-sm text-luxury-stone">({product.reviews} reviews)</span>
             </div>
           </div>
 
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <span className="text-2xl font-bold text-luxury-charcoal">${product.price}</span>
               {product.originalPrice && (
                 <span className="text-lg text-luxury-stone line-through">${product.originalPrice}</span>
@@ -181,17 +183,17 @@ const ProductShowcase = () => {
             </div>
             
             {/* Color options */}
-            <div className="flex gap-1">
+            <div className="flex gap-2">
               {product.colors.slice(0, 3).map((color, index) => (
                 <div
                   key={index}
-                  className="w-6 h-6 rounded-full border-2 border-gray-200 cursor-pointer hover:scale-110 transition-transform duration-200"
+                  className="w-7 h-7 rounded-full border-2 border-gray-200 cursor-pointer hover:scale-110 transition-transform duration-200 shadow-sm"
                   style={{ backgroundColor: color }}
                   title={colorNames[color]}
                 />
               ))}
               {product.colors.length > 3 && (
-                <div className="w-6 h-6 rounded-full border-2 border-gray-200 bg-gray-100 flex items-center justify-center text-xs text-luxury-stone">
+                <div className="w-7 h-7 rounded-full border-2 border-gray-200 bg-gray-100 flex items-center justify-center text-xs text-luxury-stone font-semibold">
                   +{product.colors.length - 3}
                 </div>
               )}
@@ -203,25 +205,26 @@ const ProductShowcase = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-gradient-to-b from-white to-luxury-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center space-y-4 mb-16">
-          <div className="flex items-center justify-center gap-2">
-            <Zap className="w-6 h-6 text-luxury-gold" />
-            <p className="text-luxury-gold font-medium tracking-wider uppercase">Featured Collection</p>
+        {/* Enhanced Section Header */}
+        <div className="text-center space-y-6 mb-20">
+          <div className="flex items-center justify-center gap-3">
+            <Zap className="w-7 h-7 text-luxury-pink animate-glow" />
+            <p className="text-luxury-pink font-bold tracking-wider uppercase text-lg">Featured Collection</p>
+            <Zap className="w-7 h-7 text-luxury-pink animate-glow" />
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-luxury-charcoal">
+          <h2 className="text-5xl lg:text-6xl font-bold text-luxury-charcoal text-shadow-luxury">
             Professional Excellence
           </h2>
-          <p className="text-xl text-luxury-stone max-w-3xl mx-auto">
-            Carefully crafted t-shirts that seamlessly blend comfort with professional sophistication. 
-            Each piece is designed for the modern professional who values quality and style.
+          <p className="text-xl text-luxury-stone max-w-4xl mx-auto leading-relaxed">
+            Meticulously crafted t-shirts that seamlessly blend unparalleled comfort with professional sophistication. 
+            Each piece is thoughtfully designed for the modern professional who refuses to compromise on quality and style.
           </p>
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
@@ -230,19 +233,19 @@ const ProductShowcase = () => {
         {/* Quick View Modal */}
         {selectedProduct && (
           <Dialog>
-            <DialogContent className="max-w-4xl p-0 overflow-hidden">
+            <DialogContent className="max-w-5xl p-0 overflow-hidden rounded-3xl">
               <div className="grid md:grid-cols-2 gap-0">
                 {/* Product Image */}
-                <div className="aspect-square bg-gradient-to-br from-luxury-cream to-white flex items-center justify-center">
-                  <div className="text-center text-luxury-stone">
-                    <div className="text-6xl mb-4">👕</div>
-                    <p className="text-lg font-medium">{selectedProduct.name}</p>
-                    <p className="text-sm">Color: {colorNames[selectedColor]}</p>
-                  </div>
+                <div className="aspect-square overflow-hidden">
+                  <img 
+                    src={selectedProduct.image} 
+                    alt={selectedProduct.name}
+                    className="w-full h-full object-cover object-center"
+                  />
                 </div>
 
                 {/* Product Details */}
-                <div className="p-8 space-y-6">
+                <div className="p-8 space-y-6 bg-gradient-to-br from-white to-luxury-cream/50">
                   <div>
                     <h3 className="text-2xl font-bold text-luxury-charcoal">{selectedProduct.name}</h3>
                     <div className="flex items-center gap-2 mt-2">
@@ -317,10 +320,14 @@ const ProductShowcase = () => {
           </Dialog>
         )}
 
-        {/* View All Button */}
-        <div className="text-center mt-16">
-          <Button size="lg" variant="outline" className="border-luxury-charcoal text-luxury-charcoal hover:bg-luxury-charcoal hover:text-white font-medium px-8 py-4">
-            View All Products
+        {/* Enhanced View All Button */}
+        <div className="text-center">
+          <Button 
+            size="lg" 
+            className="bg-gradient-to-r from-luxury-teal to-luxury-navy hover:from-luxury-navy hover:to-luxury-teal text-white font-bold px-12 py-4 rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+          >
+            Explore Full Collection
+            <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
       </div>
