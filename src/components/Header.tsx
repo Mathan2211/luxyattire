@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Menu, X, Search, ShoppingBag, User, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,9 +21,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-luxury-charcoal tracking-tight">
-              Luxy<span className="text-luxury-gold">Attire</span>
-            </h1>
+            <Link to="/">
+              <h1 className="text-2xl font-bold text-luxury-charcoal tracking-tight">
+                Luxy<span className="text-luxury-pink">Attire</span>
+              </h1>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -32,7 +35,7 @@ const Header = () => {
               onMouseEnter={() => setIsCollectionsOpen(true)}
               onMouseLeave={() => setIsCollectionsOpen(false)}
             >
-              <button className="flex items-center text-luxury-charcoal hover:text-luxury-gold transition-colors duration-200 font-medium">
+              <button className="flex items-center text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium">
                 Collections
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
@@ -43,7 +46,7 @@ const Header = () => {
                   <div className="space-y-4">
                     {collections.map((collection, index) => (
                       <div key={index} className="group cursor-pointer p-3 rounded-md hover:bg-gray-50 transition-colors duration-200">
-                        <h3 className="font-semibold text-luxury-charcoal group-hover:text-luxury-gold transition-colors duration-200">
+                        <h3 className="font-semibold text-luxury-charcoal group-hover:text-luxury-pink transition-colors duration-200">
                           {collection.name}
                         </h3>
                         <p className="text-sm text-luxury-stone mt-1">{collection.description}</p>
@@ -54,9 +57,9 @@ const Header = () => {
               )}
             </div>
             
-            <a href="#" className="text-luxury-charcoal hover:text-luxury-gold transition-colors duration-200 font-medium">About</a>
-            <a href="#" className="text-luxury-charcoal hover:text-luxury-gold transition-colors duration-200 font-medium">Sustainability</a>
-            <a href="#" className="text-luxury-charcoal hover:text-luxury-gold transition-colors duration-200 font-medium">Contact</a>
+            <Link to="/about" className="text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium">About</Link>
+            <a href="#" className="text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium">Sustainability</a>
+            <Link to="/contact" className="text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium">Contact</Link>
           </nav>
 
           {/* Right side icons */}
@@ -69,7 +72,7 @@ const Header = () => {
             </Button>
             <Button variant="ghost" size="sm" className="relative">
               <ShoppingBag className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 bg-luxury-gold text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 bg-luxury-pink text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                 0
               </span>
             </Button>
@@ -93,14 +96,14 @@ const Header = () => {
               <div className="space-y-2">
                 <h3 className="font-semibold text-luxury-charcoal">Collections</h3>
                 {collections.map((collection, index) => (
-                  <a key={index} href="#" className="block pl-4 py-2 text-luxury-stone hover:text-luxury-gold transition-colors duration-200">
+                  <a key={index} href="#" className="block pl-4 py-2 text-luxury-stone hover:text-luxury-pink transition-colors duration-200">
                     {collection.name}
                   </a>
                 ))}
               </div>
-              <a href="#" className="block py-2 text-luxury-charcoal hover:text-luxury-gold transition-colors duration-200 font-medium">About</a>
-              <a href="#" className="block py-2 text-luxury-charcoal hover:text-luxury-gold transition-colors duration-200 font-medium">Sustainability</a>
-              <a href="#" className="block py-2 text-luxury-charcoal hover:text-luxury-gold transition-colors duration-200 font-medium">Contact</a>
+              <Link to="/about" className="block py-2 text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium">About</Link>
+              <a href="#" className="block py-2 text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium">Sustainability</a>
+              <Link to="/contact" className="block py-2 text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium">Contact</Link>
             </div>
           </div>
         )}
