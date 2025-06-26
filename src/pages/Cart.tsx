@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Minus, Plus, Trash2, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const cartItems = [
@@ -110,10 +111,12 @@ const Cart = () => {
                   </div>
                 </div>
                 
-                <Button className="w-full bg-luxury-pink hover:bg-luxury-pink/90 text-white font-semibold py-3 text-lg">
-                  <ShoppingBag className="w-5 h-5 mr-2" />
-                  Proceed to Checkout
-                </Button>
+                <Link to="/checkout">
+                  <Button className="w-full bg-luxury-pink hover:bg-luxury-pink/90 text-white font-semibold py-3 text-lg">
+                    <ShoppingBag className="w-5 h-5 mr-2" />
+                    Proceed to Checkout
+                  </Button>
+                </Link>
                 
                 <p className="text-sm text-luxury-stone text-center mt-4">
                   Free shipping on orders over $100

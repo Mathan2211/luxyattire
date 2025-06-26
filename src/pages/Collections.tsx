@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ArrowRight, Star, Leaf, Award, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Collections = () => {
   const collections = [
@@ -14,7 +15,8 @@ const Collections = () => {
       image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       icon: Star,
       itemCount: 24,
-      priceRange: '$79 - $99'
+      priceRange: '$79 - $99',
+      link: '/collections/essential'
     },
     {
       id: 2,
@@ -23,7 +25,8 @@ const Collections = () => {
       image: 'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       icon: Award,
       itemCount: 18,
-      priceRange: '$119 - $159'
+      priceRange: '$119 - $159',
+      link: '/collections/premium'
     },
     {
       id: 3,
@@ -32,7 +35,8 @@ const Collections = () => {
       image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       icon: Sparkles,
       itemCount: 12,
-      priceRange: '$139 - $199'
+      priceRange: '$139 - $199',
+      link: '/collections'
     },
     {
       id: 4,
@@ -41,7 +45,8 @@ const Collections = () => {
       image: 'https://images.unsplash.com/photo-1607345366928-199ea26cfe3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       icon: Leaf,
       itemCount: 16,
-      priceRange: '$89 - $129'
+      priceRange: '$89 - $129',
+      link: '/collections'
     }
   ];
 
@@ -100,10 +105,12 @@ const Collections = () => {
                       </div>
                     </div>
                     
-                    <Button className="w-full bg-luxury-charcoal hover:bg-luxury-charcoal/90 text-white group-hover:bg-luxury-pink group-hover:hover:bg-luxury-pink/90 transition-all duration-300">
-                      Explore Collection
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
+                    <Link to={collection.link}>
+                      <Button className="w-full bg-luxury-charcoal hover:bg-luxury-charcoal/90 text-white group-hover:bg-luxury-pink group-hover:hover:bg-luxury-pink/90 transition-all duration-300">
+                        Explore Collection
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               );
