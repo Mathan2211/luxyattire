@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import OrderConfirmation from '@/components/OrderConfirmation';
 import { ArrowLeft, CreditCard, Truck, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -22,6 +22,9 @@ const Checkout = () => {
     cvv: '',
     nameOnCard: ''
   });
+
+  const [showOrderConfirmation, setShowOrderConfirmation] = useState(false);
+  const [orderNumber, setOrderNumber] = useState('');
 
   const cartItems = [
     {
@@ -56,10 +59,22 @@ const Checkout = () => {
     });
   };
 
+  const generateOrderNumber = () => {
+    return 'ORD' + Date.now().toString().slice(-8);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Order submitted:', formData);
-    // Handle order submission
+    
+    // Generate order number and show confirmation
+    const newOrderNumber = generateOrderNumber();
+    setOrderNumber(newOrderNumber);
+    setShowOrderConfirmation(true);
+  };
+
+  const handleCloseConfirmation = () => {
+    setShowOrderConfirmation(false);
   };
 
   return (
@@ -79,7 +94,7 @@ const Checkout = () => {
           </div>
           <div className="text-center space-y-4">
             <h1 className="text-4xl lg:text-5xl font-bold text-luxury-charcoal">
-              Secure <span className="text-luxury-pink">Checkout</span>
+              Secure <span className="text-luxury-rose">Checkout</span>
             </h1>
             <p className="text-lg text-luxury-stone max-w-2xl mx-auto">
               Complete your order with our secure payment process.
@@ -97,7 +112,7 @@ const Checkout = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <CreditCard className="w-5 h-5 mr-2 text-luxury-pink" />
+                    <CreditCard className="w-5 h-5 mr-2 text-luxury-rose" />
                     Payment Information
                   </CardTitle>
                 </CardHeader>
@@ -255,7 +270,7 @@ const Checkout = () => {
 
                     <Button 
                       type="submit" 
-                      className="w-full bg-luxury-pink hover:bg-luxury-pink/90 text-white py-3 text-lg"
+                      className="w-full bg-luxury-rose hover:bg-luxury-rose/90 text-white py-3 text-lg"
                     >
                       Complete Order - ${total}
                     </Button>
@@ -266,11 +281,11 @@ const Checkout = () => {
               {/* Security Features */}
               <div className="flex items-center justify-center space-x-8 text-sm text-luxury-stone">
                 <div className="flex items-center">
-                  <Shield className="w-4 h-4 mr-2 text-luxury-pink" />
+                  <Shield className="w-4 h-4 mr-2 text-luxury-rose" />
                   SSL Encrypted
                 </div>
                 <div className="flex items-center">
-                  <Truck className="w-4 h-4 mr-2 text-luxury-pink" />
+                  <Truck className="w-4 h-4 mr-2 text-luxury-rose" />
                   Free Returns
                 </div>
               </div>
@@ -314,7 +329,7 @@ const Checkout = () => {
                     </div>
                     <div className="flex justify-between text-xl font-bold border-t pt-2">
                       <span>Total</span>
-                      <span className="text-luxury-pink">${total}</span>
+                      <span className="text-luxury-rose">${total}</span>
                     </div>
                   </div>
                 </CardContent>
@@ -323,6 +338,14 @@ const Checkout = () => {
           </div>
         </div>
       </section>
+
+      {/* Order Confirmation Modal */}
+      <OrderConfirmation
+        isOpen={showOrderConfirmation}
+        onClose={handleCloseConfirmation}
+        orderNumber={orderNumber}
+        total={total}
+      />
 
       <Footer />
     </div>
