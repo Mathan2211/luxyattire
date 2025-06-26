@@ -23,7 +23,7 @@ const Header = () => {
           <div className="flex-shrink-0">
             <Link to="/">
               <h1 className="text-2xl font-bold text-luxury-charcoal tracking-tight">
-                Luxy<span className="text-luxury-pink">Attire</span>
+                Luxy<span className="text-luxury-rose">Attire</span>
               </h1>
             </Link>
           </div>
@@ -37,7 +37,7 @@ const Header = () => {
             >
               <Link 
                 to="/collections"
-                className="flex items-center text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium"
+                className="flex items-center text-luxury-charcoal hover:text-luxury-plum transition-colors duration-200 font-medium"
               >
                 Collections
                 <ChevronDown className="ml-1 h-4 w-4" />
@@ -53,7 +53,7 @@ const Header = () => {
                         to="/collections"
                         className="group cursor-pointer p-3 rounded-md hover:bg-gray-50 transition-colors duration-200 block"
                       >
-                        <h3 className="font-semibold text-luxury-charcoal group-hover:text-luxury-pink transition-colors duration-200">
+                        <h3 className="font-semibold text-luxury-charcoal group-hover:text-luxury-plum transition-colors duration-200">
                           {collection.name}
                         </h3>
                         <p className="text-sm text-luxury-stone mt-1">{collection.description}</p>
@@ -61,7 +61,7 @@ const Header = () => {
                     ))}
                     <Link 
                       to="/collections"
-                      className="block pt-4 border-t border-gray-100 text-luxury-pink hover:text-luxury-pink/80 font-medium"
+                      className="block pt-4 border-t border-gray-100 text-luxury-plum hover:text-luxury-plum/80 font-medium"
                     >
                       View All Collections →
                     </Link>
@@ -70,9 +70,9 @@ const Header = () => {
               )}
             </div>
             
-            <Link to="/about" className="text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium">About</Link>
-            <a href="#" className="text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium">Sustainability</a>
-            <Link to="/contact" className="text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium">Contact</Link>
+            <Link to="/about" className="text-luxury-charcoal hover:text-luxury-plum transition-colors duration-200 font-medium">About</Link>
+            <a href="#" className="text-luxury-charcoal hover:text-luxury-plum transition-colors duration-200 font-medium">Sustainability</a>
+            <Link to="/contact" className="text-luxury-charcoal hover:text-luxury-plum transition-colors duration-200 font-medium">Contact</Link>
           </nav>
 
           {/* Right side icons */}
@@ -90,7 +90,7 @@ const Header = () => {
             <Button variant="ghost" size="sm" className="relative" asChild>
               <Link to="/cart">
                 <ShoppingBag className="h-5 w-5" />
-                <span className="absolute -top-1 -right-1 bg-luxury-pink text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-luxury-rose text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                   0
                 </span>
               </Link>
@@ -118,7 +118,7 @@ const Header = () => {
                   <Link 
                     key={index} 
                     to="/collections" 
-                    className="block pl-4 py-2 text-luxury-stone hover:text-luxury-pink transition-colors duration-200"
+                    className="block pl-4 py-2 text-luxury-stone hover:text-luxury-plum transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {collection.name}
@@ -127,21 +127,21 @@ const Header = () => {
               </div>
               <Link 
                 to="/about" 
-                className="block py-2 text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium"
+                className="block py-2 text-luxury-charcoal hover:text-luxury-plum transition-colors duration-200 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
               <a 
                 href="#" 
-                className="block py-2 text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium"
+                className="block py-2 text-luxury-charcoal hover:text-luxury-plum transition-colors duration-200 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Sustainability
               </a>
               <Link 
                 to="/contact" 
-                className="block py-2 text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium"
+                className="block py-2 text-luxury-charcoal hover:text-luxury-plum transition-colors duration-200 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
@@ -160,7 +160,7 @@ const Header = () => {
                 <Link to="/cart" onClick={() => setIsMenuOpen(false)}>
                   <Button variant="ghost" size="sm" className="relative">
                     <ShoppingBag className="h-5 w-5" />
-                    <span className="absolute -top-1 -right-1 bg-luxury-pink text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                    <span className="absolute -top-1 -right-1 bg-luxury-rose text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                       0
                     </span>
                   </Button>

@@ -64,12 +64,15 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				luxury: {
-					charcoal: '#1E1E1E',
-					pink: '#EC4899',
-					cream: '#FAF8F5',
-					stone: '#78716C',
-					teal: '#0D9488',
-					navy: '#1E3A8A'
+					charcoal: '#1a1a1d',     // Primary Color - Dark Charcoal
+					maroon: '#3b1c32',       // Secondary Color - Deep Maroon
+					plum: '#6a1e55',         // Accent Color 1 - Royal Plum
+					rose: '#a64d79',         // Accent Color 2 - Dusty Rose
+					cream: '#FAF8F5',        // Keep existing cream for backgrounds
+					stone: '#78716C',        // Keep existing stone for text
+					teal: '#0D9488',         // Keep existing teal for variety
+					navy: '#1E3A8A',         // Keep existing navy for variety
+					pink: '#a64d79'          // Map pink to Dusty Rose
 				}
 			},
 			borderRadius: {
@@ -134,10 +137,10 @@ export default {
 				},
 				'glow': {
 					'0%, 100%': {
-						boxShadow: '0 0 20px rgba(236, 72, 153, 0.3)'
+						boxShadow: '0 0 20px rgba(166, 77, 121, 0.3)'
 					},
 					'50%': {
-						boxShadow: '0 0 40px rgba(236, 72, 153, 0.6)'
+						boxShadow: '0 0 40px rgba(166, 77, 121, 0.6)'
 					}
 				}
 			},

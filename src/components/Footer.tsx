@@ -22,7 +22,7 @@ const Footer = () => {
                 placeholder="Enter your email"
                 className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
               />
-              <Button className="bg-luxury-pink hover:bg-luxury-pink/90 text-white font-semibold">
+              <Button className="bg-luxury-rose hover:bg-luxury-rose/90 text-white font-semibold">
                 Subscribe
               </Button>
             </div>
@@ -38,7 +38,7 @@ const Footer = () => {
             <div>
               <Link to="/">
                 <h2 className="text-2xl font-bold tracking-tight">
-                  Luxy<span className="text-luxury-pink">Attire</span>
+                  Luxy<span className="text-luxury-rose">Attire</span>
                 </h2>
               </Link>
               <p className="text-gray-300 mt-4">
@@ -46,13 +46,13 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex space-x-4">
-              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-luxury-pink">
+              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-luxury-rose">
                 <Instagram className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-luxury-pink">
+              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-luxury-rose">
                 <Twitter className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-luxury-pink">
+              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-luxury-rose">
                 <Facebook className="h-5 w-5" />
               </Button>
             </div>
@@ -62,11 +62,11 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-6">Collections</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-luxury-pink transition-colors duration-200">Essential Collection</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-luxury-pink transition-colors duration-200">Premium Series</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-luxury-pink transition-colors duration-200">Limited Edition</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-luxury-pink transition-colors duration-200">Sustainable Line</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-luxury-pink transition-colors duration-200">Best Sellers</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Essential Collection</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Premium Series</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Limited Edition</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Sustainable Line</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Best Sellers</a></li>
             </ul>
           </div>
 
@@ -74,11 +74,11 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-6">Customer Service</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-luxury-pink transition-colors duration-200">Size Guide</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-luxury-pink transition-colors duration-200">Shipping & Returns</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-luxury-pink transition-colors duration-200">Care Instructions</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-luxury-pink transition-colors duration-200">FAQ</a></li>
-              <li><Link to="/contact" className="text-gray-300 hover:text-luxury-pink transition-colors duration-200">Contact Support</Link></li>
+              <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Size Guide</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Shipping & Returns</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Care Instructions</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">FAQ</a></li>
+              <li><Link to="/contact" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Contact Support</Link></li>
             </ul>
           </div>
 
@@ -87,15 +87,15 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-6">Get in Touch</h4>
             <ul className="space-y-4">
               <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-luxury-pink" />
+                <Mail className="h-5 w-5 text-luxury-rose" />
                 <span className="text-gray-300">hello@luxyattire.com</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-luxury-pink" />
+                <Phone className="h-5 w-5 text-luxury-rose" />
                 <span className="text-gray-300">+1 (555) 123-4567</span>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-luxury-pink mt-1" />
+                <MapPin className="h-5 w-5 text-luxury-rose mt-1" />
                 <span className="text-gray-300">
                   123 Fashion District<br />
                   New York, NY 10001
@@ -114,9 +114,9 @@ const Footer = () => {
               © 2024 LuxyAttire. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-luxury-pink transition-colors duration-200">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-luxury-pink transition-colors duration-200">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-luxury-pink transition-colors duration-200">Cookies</a>
+              <a href="#" className="text-gray-400 hover:text-luxury-rose transition-colors duration-200">Privacy Policy</a>
+              <a href="#" className="text-gray-400 hover:text-luxury-rose transition-colors duration-200">Terms of Service</a>
+              <a href="#" className="text-gray-400 hover:text-luxury-rose transition-colors duration-200">Cookies</a>
             </div>
           </div>
         </div>
