@@ -35,23 +35,36 @@ const Header = () => {
               onMouseEnter={() => setIsCollectionsOpen(true)}
               onMouseLeave={() => setIsCollectionsOpen(false)}
             >
-              <button className="flex items-center text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium">
+              <Link 
+                to="/collections"
+                className="flex items-center text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium"
+              >
                 Collections
                 <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
+              </Link>
               
               {/* Collections Dropdown */}
               {isCollectionsOpen && (
                 <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-100 p-6 animate-fade-in">
                   <div className="space-y-4">
                     {collections.map((collection, index) => (
-                      <div key={index} className="group cursor-pointer p-3 rounded-md hover:bg-gray-50 transition-colors duration-200">
+                      <Link 
+                        key={index} 
+                        to="/collections"
+                        className="group cursor-pointer p-3 rounded-md hover:bg-gray-50 transition-colors duration-200 block"
+                      >
                         <h3 className="font-semibold text-luxury-charcoal group-hover:text-luxury-pink transition-colors duration-200">
                           {collection.name}
                         </h3>
                         <p className="text-sm text-luxury-stone mt-1">{collection.description}</p>
-                      </div>
+                      </Link>
                     ))}
+                    <Link 
+                      to="/collections"
+                      className="block pt-4 border-t border-gray-100 text-luxury-pink hover:text-luxury-pink/80 font-medium"
+                    >
+                      View All Collections →
+                    </Link>
                   </div>
                 </div>
               )}
@@ -64,17 +77,23 @@ const Header = () => {
 
           {/* Right side icons */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="sm" className="hidden sm:flex">
-              <Search className="h-5 w-5" />
+            <Button variant="ghost" size="sm" className="hidden sm:flex" asChild>
+              <Link to="/search">
+                <Search className="h-5 w-5" />
+              </Link>
             </Button>
-            <Button variant="ghost" size="sm">
-              <User className="h-5 w-5" />
+            <Button variant="ghost" size="sm" asChild>
+              <Link to="/profile">
+                <User className="h-5 w-5" />
+              </Link>
             </Button>
-            <Button variant="ghost" size="sm" className="relative">
-              <ShoppingBag className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 bg-luxury-pink text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                0
-              </span>
+            <Button variant="ghost" size="sm" className="relative" asChild>
+              <Link to="/cart">
+                <ShoppingBag className="h-5 w-5" />
+                <span className="absolute -top-1 -right-1 bg-luxury-pink text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  0
+                </span>
+              </Link>
             </Button>
 
             {/* Mobile menu button */}
@@ -96,14 +115,57 @@ const Header = () => {
               <div className="space-y-2">
                 <h3 className="font-semibold text-luxury-charcoal">Collections</h3>
                 {collections.map((collection, index) => (
-                  <a key={index} href="#" className="block pl-4 py-2 text-luxury-stone hover:text-luxury-pink transition-colors duration-200">
+                  <Link 
+                    key={index} 
+                    to="/collections" 
+                    className="block pl-4 py-2 text-luxury-stone hover:text-luxury-pink transition-colors duration-200"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
                     {collection.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
-              <Link to="/about" className="block py-2 text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium">About</Link>
-              <a href="#" className="block py-2 text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium">Sustainability</a>
-              <Link to="/contact" className="block py-2 text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium">Contact</Link>
+              <Link 
+                to="/about" 
+                className="block py-2 text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+              <a 
+                href="#" 
+                className="block py-2 text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Sustainability
+              </a>
+              <Link 
+                to="/contact" 
+                className="block py-2 text-luxury-charcoal hover:text-luxury-pink transition-colors duration-200 font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+              <div className="pt-4 border-t border-gray-100 flex space-x-4">
+                <Link to="/search" onClick={() => setIsMenuOpen(false)}>
+                  <Button variant="ghost" size="sm">
+                    <Search className="h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link to="/profile" onClick={() => setIsMenuOpen(false)}>
+                  <Button variant="ghost" size="sm">
+                    <User className="h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link to="/cart" onClick={() => setIsMenuOpen(false)}>
+                  <Button variant="ghost" size="sm" className="relative">
+                    <ShoppingBag className="h-5 w-5" />
+                    <span className="absolute -top-1 -right-1 bg-luxury-pink text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                      0
+                    </span>
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         )}
