@@ -10,12 +10,12 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const AccountSettings = () => {
   const [formData, setFormData] = useState({
-    firstName: 'John',
-    lastName: 'Doe',
-    email: 'john.doe@example.com',
-    phone: '+91 9876543210',
-    dateOfBirth: '1990-05-15',
-    gender: 'male'
+    firstName: '',
+    // lastName: 'Doe',
+    email: '',
+    phone: '',
+    dateOfBirth: '',
+    gender: ''
   });
 
   const [profileImage, setProfileImage] = useState<string>('');
@@ -63,16 +63,15 @@ const AccountSettings = () => {
                 <Avatar className="w-24 h-24">
                   <AvatarImage src={profileImage} alt="Profile" />
                   <AvatarFallback className="bg-luxury-plum text-white text-2xl">
-                    {formData.firstName.charAt(0)}{formData.lastName.charAt(0)}
+                    {formData.firstName.charAt(0)}
                   </AvatarFallback>
                 </Avatar>
                 <div className="flex flex-col space-y-3">
                   <div className="flex items-center space-x-3">
                     <Label htmlFor="profile-upload" className="cursor-pointer">
                       <Button 
-                        type="button" 
-                        variant="outline" 
-                        className="flex items-center space-x-2"
+                        type="button"
+                        className="flex text-white items-center border-[1px] border-black space-x-2 bg-black hover:bg-luxury-plum"
                         asChild
                       >
                         <span>
@@ -104,7 +103,7 @@ const AccountSettings = () => {
                   <div>
                     <Label htmlFor="firstName" className="text-luxury-charcoal font-medium">First Name</Label>
                     <Input
-                      id="firstName"
+                      // id="firstName"
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
@@ -112,7 +111,7 @@ const AccountSettings = () => {
                     />
                   </div>
                   
-                  <div>
+                  {/* <div>
                     <Label htmlFor="lastName" className="text-luxury-charcoal font-medium">Last Name</Label>
                     <Input
                       id="lastName"
@@ -121,7 +120,7 @@ const AccountSettings = () => {
                       onChange={handleInputChange}
                       className="mt-1"
                     />
-                  </div>
+                  </div> */}
                   
                   <div>
                     <Label htmlFor="email" className="text-luxury-charcoal font-medium">Email Address</Label>
@@ -148,7 +147,7 @@ const AccountSettings = () => {
                     />
                   </div>
                   
-                  <div>
+                  {/* <div>
                     <Label htmlFor="dateOfBirth" className="text-luxury-charcoal font-medium">Date of Birth</Label>
                     <Input
                       id="dateOfBirth"
@@ -158,7 +157,7 @@ const AccountSettings = () => {
                       onChange={handleInputChange}
                       className="mt-1"
                     />
-                  </div>
+                  </div> */}
                   
                   <div>
                     <Label htmlFor="gender" className="text-luxury-charcoal font-medium">Gender</Label>

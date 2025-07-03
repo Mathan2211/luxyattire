@@ -72,12 +72,12 @@ const Cart = () => {
                     </div>
                     
                     <div className="flex items-center space-x-3">
-                      <Button variant="outline" size="sm">
-                        <Minus className="w-4 h-4" />
+                      <Button size="sm" className='bg-luxury-plum'>
+                        <Minus className="w-4 h-4 text-white " />
                       </Button>
                       <span className="text-xl font-semibold px-4">{item.quantity}</span>
-                      <Button variant="outline" size="sm">
-                        <Plus className="w-4 h-4" />
+                      <Button size="sm" className='bg-luxury-plum'>
+                        <Plus className="w-4 h-4 text-white" />
                       </Button>
                     </div>
                     
@@ -103,7 +103,7 @@ const Cart = () => {
                     <span className="text-luxury-stone">Shipping</span>
                     <span className="font-semibold">${shipping}</span>
                   </div>
-                  <div className="border-t pt-4">
+                  <div className=" border-t pt-4">
                     <div className="flex justify-between text-xl font-bold">
                       <span>Total</span>
                       <span className="text-luxury-pink">${total}</span>
@@ -117,10 +117,6 @@ const Cart = () => {
                     Proceed to Checkout
                   </Button>
                 </Link>
-                
-                <p className="text-sm text-luxury-stone text-center mt-4">
-                  Free shipping on orders over $100
-                </p>
               </div>
             </div>
           </div>

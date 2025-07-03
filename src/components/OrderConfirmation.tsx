@@ -36,7 +36,7 @@ const OrderConfirmation = ({ isOpen, onClose, orderNumber, total }: OrderConfirm
               <p className="font-bold text-luxury-charcoal text-lg">#{orderNumber}</p>
             </div>
             <p className="text-xl font-semibold text-luxury-rose">
-              Total: ${total}
+              Total: ₹{total}
             </p>
           </div>
         </DialogHeader>
@@ -89,8 +89,8 @@ const OrderConfirmation = ({ isOpen, onClose, orderNumber, total }: OrderConfirm
             <div className="grid grid-cols-2 gap-3">
               <Link to="/collections" className="w-full">
                 <Button 
-                  variant="outline" 
-                  className="w-full border-luxury-charcoal text-luxury-charcoal hover:bg-luxury-charcoal hover:text-white"
+
+                  className="w-full bg-black text-white hover:bg-white hover:text-black"
                   onClick={onClose}
                 >
                   Continue Shopping
@@ -99,8 +99,8 @@ const OrderConfirmation = ({ isOpen, onClose, orderNumber, total }: OrderConfirm
               
               <Link to="/wishlist" className="w-full">
                 <Button 
-                  variant="outline" 
-                  className="w-full border-luxury-rose text-luxury-rose hover:bg-luxury-rose hover:text-white"
+
+                  className="w-full bg-black text-white hover:bg-white hover:text-black"
                   onClick={onClose}
                 >
                   <Heart className="w-4 h-4 mr-2" />

@@ -15,7 +15,7 @@ const Collections = () => {
       image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       icon: Star,
       itemCount: 24,
-      priceRange: '$79 - $99',
+      priceRange: '79 - $99',
       link: '/collections/essential'
     },
     {
@@ -25,7 +25,7 @@ const Collections = () => {
       image: 'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       icon: Award,
       itemCount: 18,
-      priceRange: '$119 - $159',
+      priceRange: '119 - $159',
       link: '/collections/premium'
     },
     {
@@ -35,7 +35,7 @@ const Collections = () => {
       image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       icon: Sparkles,
       itemCount: 12,
-      priceRange: '$139 - $199',
+      priceRange: '139 - $199',
       link: '/collections'
     },
     {
@@ -45,7 +45,7 @@ const Collections = () => {
       image: 'https://images.unsplash.com/photo-1607345366928-199ea26cfe3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       icon: Leaf,
       itemCount: 16,
-      priceRange: '$89 - $129',
+      priceRange: '89 - $129',
       link: '/collections'
     }
   ];
@@ -101,7 +101,7 @@ const Collections = () => {
                     <div className="flex justify-between items-center mb-6">
                       <div className="text-sm text-luxury-stone">
                         <p>{collection.itemCount} items</p>
-                        <p className="font-semibold text-luxury-charcoal">{collection.priceRange}</p>
+                        <p className="font-semibold text-luxury-charcoal">₹{collection.priceRange}</p>
                       </div>
                     </div>
                     

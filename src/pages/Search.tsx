@@ -55,7 +55,7 @@ const Search = () => {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-12 pr-4 py-4 text-lg rounded-full border-2 border-luxury-stone/20 focus:border-luxury-pink"
                 />
-                <Button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-luxury-pink hover:bg-luxury-pink/90 rounded-full">
+                <Button className="absolute right-0 top-1/2 transform -translate-y-1/2 text-white bg-luxury-pink hover:bg-luxury-pink/90 rounded-full">
                   Search
                 </Button>
               </div>
@@ -68,37 +68,37 @@ const Search = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filter Bar */}
-          <div className="flex justify-between items-center mb-8">
-            <div className="flex items-center space-x-4">
-              <Button variant="outline" className="flex items-center">
-                <Filter className="w-4 h-4 mr-2" />
+          <div className="flex justify-end items-center mb-8">
+            {/* <div className="flex items-center space-x-4">
+              <Button className="flex items-center text-white">
+                <Filter className="w-4 h-4 mr-2 text-white" />
                 Filters
               </Button>
               <span className="text-luxury-stone">
                 Showing {searchResults.length} results
               </span>
-            </div>
+            </div> */}
             
             <div className="flex items-center space-x-2">
               <Button
                 variant={viewMode === 'grid' ? 'default' : 'outline'}
-                size="sm"
+                size="sm" className='bg-white shadow-md border-none'
                 onClick={() => setViewMode('grid')}
               >
-                <Grid className="w-4 h-4" />
+                <Grid className="w-4 h-4 text-luxury-plum" />
               </Button>
               <Button
                 variant={viewMode === 'list' ? 'default' : 'outline'}
-                size="sm"
+                size="sm" className='bg-white shadow-md border-none'
                 onClick={() => setViewMode('list')}
               >
-                <List className="w-4 h-4" />
+                <List className="w-4 h-4 text-luxury-plum" />
               </Button>
             </div>
           </div>
 
           {/* Results Grid */}
-          <div className={`grid gap-8 ${viewMode === 'grid' ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
+          <div className={`grid gap-8 ${viewMode === 'grid' ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-2'}`}>
             {searchResults.map((product) => (
               <div key={product.id} className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="aspect-square overflow-hidden">

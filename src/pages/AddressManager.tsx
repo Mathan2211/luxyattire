@@ -118,20 +118,22 @@ const AddressManager = () => {
                     <div className="flex space-x-2">
                       {!address.isDefault && (
                         <Button 
-                          variant="outline" 
+                           
                           size="sm"
                           onClick={() => setDefaultAddress(address.id)}
+                          className='text-white'
                         >
                           Set Default
                         </Button>
                       )}
-                      <Button variant="outline" size="sm">
-                        <Edit className="w-4 h-4" />
+                      <Button size="sm">
+                        <Edit className="w-4 h-4 bg-luxury-plum text-white" />
                       </Button>
                       <Button 
-                        variant="outline" 
+                         
                         size="sm"
                         onClick={() => removeAddress(address.id)}
+                        className='text-white bg-luxury-plum'
                       >
                         <Trash2 className="w-4 h-4" />
                       </Button>
@@ -234,13 +236,14 @@ const AddressManager = () => {
                 <div className="flex space-x-3 mt-6">
                   <Button 
                     onClick={handleAddAddress}
-                    className="bg-luxury-plum hover:bg-luxury-plum/90"
+                    className="bg-luxury-plum hover:bg-luxury-plum/90 text-white"
                   >
                     Add Address
                   </Button>
                   <Button 
-                    variant="outline"
+                    
                     onClick={() => setShowAddForm(false)}
+                    className='bg-red-400 text-white'
                   >
                     Cancel
                   </Button>

@@ -4,6 +4,7 @@ import { Instagram, Twitter, Facebook, Mail, Phone, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Link } from 'react-router-dom';
+import { RiInstagramLine } from "react-icons/ri";
 
 const Footer = () => {
   return (
@@ -45,28 +46,18 @@ const Footer = () => {
                 Redefining professional style with premium t-shirts designed for the modern workplace.
               </p>
             </div>
-            <div className="flex space-x-4">
-              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-luxury-rose">
-                <Instagram className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-luxury-rose">
-                <Twitter className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-luxury-rose">
-                <Facebook className="h-5 w-5" />
-              </Button>
-            </div>
+            
           </div>
 
           {/* Collections */}
           <div>
             <h4 className="font-semibold text-lg mb-6">Collections</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Essential Collection</a></li>
               <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Premium Series</a></li>
               <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Limited Edition</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Sustainable Line</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Best Sellers</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Essential Collection</a></li>
+              {/* <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Eco Friendly</a></li> */}
+              {/* <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Best Sellers</a></li> */}
             </ul>
           </div>
 
@@ -75,9 +66,9 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-6">Customer Service</h4>
             <ul className="space-y-3">
               <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Size Guide</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Shipping & Returns</a></li>
+              {/* <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Shipping & Returns</a></li> */}
               <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Care Instructions</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">FAQ</a></li>
+              {/* <li><a href="#" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">FAQ</a></li> */}
               <li><Link to="/contact" className="text-gray-300 hover:text-luxury-rose transition-colors duration-200">Contact Support</Link></li>
             </ul>
           </div>
@@ -88,18 +79,18 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-luxury-rose" />
-                <span className="text-gray-300">hello@luxyattire.com</span>
+                <span className="text-gray-300">luxyattire2025@gmail.com</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-luxury-rose" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-gray-300">+91 9876543210</span>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-luxury-rose mt-1" />
-                <span className="text-gray-300">
-                  123 Fashion District<br />
-                  New York, NY 10001
-                </span>
+                {/* <MapPin className="h-5 w-5 text-luxury-rose mt-1" /> */}
+                <RiInstagramLine className="h-5 w-5 text-luxury-rose mt-1" />
+                <Link to="https://www.instagram.com/luxyattire?igsh=MXJwczdmcW0xdHN1cw=="><span className="text-gray-300">
+                  luxyattire
+                </span></Link>
               </li>
             </ul>
           </div>

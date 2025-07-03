@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
 import { Heart, Eye, ShoppingCart, Star, Zap, Sparkles, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -23,6 +24,7 @@ const ProductShowcase = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedColor, setSelectedColor] = useState<string>('');
   const [selectedSize, setSelectedSize] = useState<string>('');
+  const navigate = useNavigate();
 
   const products: Product[] = [
     {
@@ -176,9 +178,9 @@ const ProductShowcase = () => {
 
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <span className="text-2xl font-bold text-luxury-charcoal">${product.price}</span>
+              <span className="text-2xl font-bold text-luxury-charcoal">Rs.{product.price}</span>
               {product.originalPrice && (
-                <span className="text-lg text-luxury-stone line-through">${product.originalPrice}</span>
+                <span className="text-lg text-luxury-stone line-through">Rs{product.originalPrice}</span>
               )}
             </div>
             
@@ -325,6 +327,7 @@ const ProductShowcase = () => {
           <Button 
             size="lg" 
             className="bg-gradient-to-r from-luxury-teal to-luxury-navy hover:from-luxury-navy hover:to-luxury-teal text-white font-bold px-12 py-4 rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            onClick={()=>navigate(`/collections`)}
           >
             Explore Full Collection
             <ArrowRight className="ml-2 h-5 w-5" />

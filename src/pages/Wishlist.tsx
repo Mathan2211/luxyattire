@@ -2,10 +2,11 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Heart, ShoppingBag, X } from 'lucide-react';
+import { Heart, ShoppingBag, X, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
-const Wishlist = () => {
+const  Wishlist = () => {
   const wishlistItems = [
     {
       id: 1,
@@ -33,6 +34,8 @@ const Wishlist = () => {
     }
   ];
 
+  const navigate = useNavigate();
+
   const removeFromWishlist = (id: number) => {
     console.log('Removing item from wishlist:', id);
     // Add remove logic here
@@ -49,6 +52,10 @@ const Wishlist = () => {
       
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Button variant="ghost" size="sm" onClick={() => navigate(`/profile`)} className='bg-transparent text-black hover:bg-transparent hover:text-black mb-5'>
+            <ArrowLeft className="w-4 h-4 mr-2 " />
+            Back to profile
+          </Button>
           <div className="mb-8">
             <h1 className="text-4xl font-bold text-luxury-charcoal mb-2">My Wishlist</h1>
             <p className="text-luxury-stone">Items you've saved for later</p>
@@ -89,11 +96,11 @@ const Wishlist = () => {
                   
                   <div className="flex space-x-2">
                     <Button 
-                      className="flex-1 bg-luxury-plum hover:bg-luxury-plum/90"
+                      className="flex-1 bg-luxury-plum hover:bg-luxury-plum/90 text-white"
                       disabled={!item.inStock}
                       onClick={() => addToCart(item.id)}
                     >
-                      <ShoppingBag className="w-4 h-4 mr-2" />
+                      <ShoppingBag className="w-4 h-4 mr-2 text-white" />
                       Add to Cart
                     </Button>
                   </div>

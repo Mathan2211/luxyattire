@@ -71,7 +71,7 @@ const Premium = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-4 mb-8">
             <Link to="/collections">
-              <Button variant="ghost" size="sm">
+              <Button variant="ghost" size="sm" className='bg-transparent text-black hover:bg-transparent hover:text-black'>
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Collections
               </Button>
@@ -91,7 +91,7 @@ const Premium = () => {
             <div className="flex items-center justify-center space-x-8 text-sm text-luxury-stone">
               <span>18 Items</span>
               <span>•</span>
-              <span>$159 - $599</span>
+              <span>₹159 - $599</span>
               <span>•</span>
               <span>Luxury Quality</span>
             </div>
@@ -128,7 +128,7 @@ const Premium = () => {
                 
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-luxury-charcoal mb-2">{product.name}</h3>
-                  <p className="text-2xl font-bold text-luxury-pink mb-4">${product.price}</p>
+                  <p className="text-2xl font-bold text-luxury-pink mb-4">₹{product.price}</p>
                   
                   <div className="mb-6">
                     <p className="text-sm text-luxury-stone mb-2">Premium Options:</p>

@@ -7,6 +7,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
+import GPay from "../Assets/gpay.png"
+import PhonePe from "../Assets/phonepe.png"
+import PayTm from "../Assets/paytm.png"
 
 const Checkout = () => {
   const [formData, setFormData] = useState({
@@ -66,7 +69,7 @@ const Checkout = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Order submitted:', formData);
-    
+
     // Generate order number and show confirmation
     const newOrderNumber = generateOrderNumber();
     setOrderNumber(newOrderNumber);
@@ -80,13 +83,13 @@ const Checkout = () => {
   return (
     <div className="min-h-screen bg-luxury-cream">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="py-12 bg-gradient-to-br from-luxury-cream to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-4 mb-6">
             <Link to="/cart">
-              <Button variant="ghost" size="sm">
+              <Button size="sm" className='text-black bg-transparent hover:bg-transparent'>
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Cart
               </Button>
@@ -109,7 +112,7 @@ const Checkout = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Checkout Form */}
             <div className="space-y-8">
-              <Card>
+              <Card className='bg-[#d4dbf5] border-none'>
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <CreditCard className="w-5 h-5 mr-2 text-luxury-rose" />
@@ -212,21 +215,31 @@ const Checkout = () => {
                       </div>
                     </div>
 
-                    <div>
-                      <label className="block text-sm font-medium text-luxury-charcoal mb-2">
-                        Card Number
-                      </label>
-                      <Input
-                        type="text"
-                        name="cardNumber"
-                        value={formData.cardNumber}
-                        onChange={handleInputChange}
-                        placeholder="1234 5678 9012 3456"
-                        required
-                      />
+                    <div className='flex gap-16 justify-center'>
+                      <div>
+                        <label className="block text-sm font-medium text-luxury-charcoal mb-2">
+                          G-Pay
+                        </label>
+                        <img src={GPay} alt="G-Pay" className='h-14 w-14 rounded-lg' />
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-luxury-charcoal mb-2">
+                          PhonePe
+                        </label>
+                        <img src={PhonePe} alt="G-Pay" className='h-14 w-14 rounded-lg' />
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-medium text-luxury-charcoal mb-2">
+                          Paytm
+                        </label>
+                        <img src={PayTm} alt="G-Pay" className='h-14 w-14 rounded-lg' />
+                      </div>
+
                     </div>
 
-                    <div className="grid grid-cols-3 gap-4">
+                    {/* <div className="grid grid-cols-3 gap-4">
                       <div className="col-span-2">
                         <label className="block text-sm font-medium text-luxury-charcoal mb-2">
                           Expiry Date
@@ -253,9 +266,9 @@ const Checkout = () => {
                           required
                         />
                       </div>
-                    </div>
+                    </div> */}
 
-                    <div>
+                    {/* <div>
                       <label className="block text-sm font-medium text-luxury-charcoal mb-2">
                         Name on Card
                       </label>
@@ -266,10 +279,10 @@ const Checkout = () => {
                         onChange={handleInputChange}
                         required
                       />
-                    </div>
+                    </div> */}
 
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
                       className="w-full bg-luxury-rose hover:bg-luxury-rose/90 text-white py-3 text-lg"
                     >
                       Complete Order - ${total}
@@ -284,24 +297,20 @@ const Checkout = () => {
                   <Shield className="w-4 h-4 mr-2 text-luxury-rose" />
                   SSL Encrypted
                 </div>
-                <div className="flex items-center">
-                  <Truck className="w-4 h-4 mr-2 text-luxury-rose" />
-                  Free Returns
-                </div>
               </div>
             </div>
 
             {/* Order Summary */}
             <div className="lg:sticky lg:top-8">
-              <Card>
+              <Card className='bg-[#d4dbf5] border-none'>
                 <CardHeader>
                   <CardTitle>Order Summary</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   {cartItems.map((item) => (
                     <div key={item.id} className="flex items-center space-x-4">
-                      <img 
-                        src={item.image} 
+                      <img
+                        src={item.image}
                         alt={item.name}
                         className="w-16 h-16 object-cover rounded-lg"
                       />
@@ -313,8 +322,8 @@ const Checkout = () => {
                       <p className="font-semibold text-luxury-charcoal">${item.price * item.quantity}</p>
                     </div>
                   ))}
-                  
-                  <div className="border-t pt-4 space-y-2">
+
+                  <div className="pt-4 space-y-2">
                     <div className="flex justify-between">
                       <span className="text-luxury-stone">Subtotal</span>
                       <span className="font-semibold">${subtotal}</span>
@@ -327,7 +336,7 @@ const Checkout = () => {
                       <span className="text-luxury-stone">Tax</span>
                       <span className="font-semibold">${tax}</span>
                     </div>
-                    <div className="flex justify-between text-xl font-bold border-t pt-2">
+                    <div className="flex justify-between text-xl border-t-blue-950 font-bold pt-2">
                       <span>Total</span>
                       <span className="text-luxury-rose">${total}</span>
                     </div>

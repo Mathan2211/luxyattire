@@ -2,8 +2,9 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Package, Truck, CheckCircle, Clock } from 'lucide-react';
+import { Package, Truck, CheckCircle, Clock, Link, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const OrderHistory = () => {
   const orders = [
@@ -35,12 +36,22 @@ const OrderHistory = () => {
       icon: Clock
     }
   ];
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-luxury-cream">
       <Header />
-      
+
+
       <section className="py-20">
+        <div className="flex items-center space-x-7 mb-8 ml-24">
+
+          <Button variant="ghost" size="sm" onClick={() => navigate(`/profile`)} className='bg-transparent text-black hover:bg-transparent hover:text-black'>
+            <ArrowLeft className="w-4 h-4 mr-2 " />
+            Back to profile
+          </Button>
+
+        </div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <h1 className="text-4xl font-bold text-luxury-charcoal mb-2">Order History</h1>
@@ -74,10 +85,10 @@ const OrderHistory = () => {
                       <span className={`font-medium ${order.statusColor}`}>{order.status}</span>
                     </div>
                     <div className="space-x-3">
-                      <Button variant="outline" size="sm">
+                      <Button size="sm" className='text-white bg-black hover:bg-white hover:text-black'>
                         View Details
                       </Button>
-                      <Button variant="outline" size="sm">
+                      <Button size="sm" className='text-white bg-black hover:bg-white hover:text-black'>
                         Track Order
                       </Button>
                     </div>

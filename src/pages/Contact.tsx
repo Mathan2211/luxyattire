@@ -52,7 +52,7 @@ const Contact = () => {
       {/* Contact Content */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
@@ -69,7 +69,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-luxury-charcoal">Email Us</h3>
-                    <p className="text-luxury-stone">hello@luxyattire.com</p>
+                    <p className="text-luxury-stone">luxyattire2025@gmail.com</p>
                     <p className="text-sm text-luxury-stone">We'll respond within 24 hours</p>
                   </div>
                 </div>
@@ -80,12 +80,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-luxury-charcoal">Call Us</h3>
-                    <p className="text-luxury-stone">+1 (555) 123-4567</p>
-                    <p className="text-sm text-luxury-stone">Mon-Fri, 9AM-6PM EST</p>
+                    <p className="text-luxury-stone">+91 9876543210</p>
+                    <p className="text-sm text-luxury-stone">Mon-Sun, 9AM-6PM EST</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                {/* <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-luxury-navy rounded-full flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
@@ -94,7 +94,7 @@ const Contact = () => {
                     <p className="text-luxury-stone">123 Fashion District<br />New York, NY 10001</p>
                     <p className="text-sm text-luxury-stone">Showroom by appointment</p>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-luxury-pink rounded-full flex items-center justify-center flex-shrink-0">
@@ -102,7 +102,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-luxury-charcoal">Business Hours</h3>
-                    <p className="text-luxury-stone">Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 10:00 AM - 4:00 PM<br />Sunday: Closed</p>
+                    <p className="text-luxury-stone">Monday - Sunday: 9:00 AM - 6:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -186,6 +186,8 @@ const Contact = () => {
                 </Button>
               </form>
             </div>
+
+
           </div>
         </div>
       </section>

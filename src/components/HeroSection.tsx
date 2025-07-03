@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play, Sparkles } from 'lucide-react';
+import HeroImg from "../Assets/HeroImg.jpg"
 
 const HeroSection = () => {
   return (
@@ -23,7 +24,7 @@ const HeroSection = () => {
                 </p>
               </div>
               <h1 className="text-6xl lg:text-8xl font-bold leading-tight text-shadow-luxury">
-                <span className="text-luxury-charcoal">Luxe</span>
+                <span className="text-luxury-charcoal">Luxy</span>
                 <span className="block text-luxury-plum bg-clip-text bg-gradient-to-r from-luxury-plum to-luxury-maroon">T-Shirts</span>
                 <span className="block text-3xl lg:text-5xl font-light text-luxury-stone mt-4">
                   Redefining Professional Style
@@ -43,9 +44,8 @@ const HeroSection = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button 
-                variant="outline" 
                 size="lg"
-                className="border-2 border-luxury-charcoal text-luxury-charcoal hover:bg-luxury-charcoal hover:text-white font-semibold px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105"
+                className="bg-black  text-white hover:bg-white hover:text-black font-semibold px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105"
               >
                 <Play className="mr-2 h-5 w-5" />
                 Brand Story
@@ -75,7 +75,8 @@ const HeroSection = () => {
               {/* Main product image with real t-shirt image */}
               <div className="aspect-[4/5] rounded-3xl shadow-2xl overflow-hidden hover-lift">
                 <img 
-                  src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80"
+                  // src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80"
+                  src={HeroImg}
                   alt="Premium T-Shirt Collection"
                   className="w-full h-full object-cover object-center"
                 />
@@ -85,7 +86,7 @@ const HeroSection = () => {
               {/* Enhanced floating elements */}
               <div className="absolute -top-8 -right-8 bg-white rounded-2xl p-6 shadow-xl animate-scale-in border border-luxury-rose/20">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-luxury-rose">$89</div>
+                  <div className="text-2xl font-bold text-luxury-rose">₹89</div>
                   <div className="text-sm text-luxury-stone">Premium Quality</div>
                   <div className="text-xs text-luxury-rose font-medium">Limited Edition</div>
                 </div>

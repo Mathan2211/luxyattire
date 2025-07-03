@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Menu, X, Search, ShoppingBag, User, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { link } from 'fs';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,13 +11,12 @@ const Header = () => {
 
   const collections = [
     { name: 'Essential Collection', description: 'Timeless basics for every professional' },
-    { name: 'Premium Series', description: 'Luxury fabrics and exclusive designs' },
+    { name: 'Premium Series', description: 'Luxury fabrics and exclusive designs'},
     { name: 'Limited Edition', description: 'Seasonal drops and collaborations' },
-    { name: 'Sustainable Line', description: 'Eco-conscious fashion choices' }
   ];
 
   return (
-    <header className="relative bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+    <header className="relative bg-white/95 backdrop-blur-md border-b border-gray-100 top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -36,7 +36,7 @@ const Header = () => {
               onMouseLeave={() => setIsCollectionsOpen(false)}
             >
               <Link 
-                to="/collections"
+                to={null}
                 className="flex items-center text-luxury-charcoal hover:text-luxury-plum transition-colors duration-200 font-medium"
               >
                 Collections
@@ -45,12 +45,12 @@ const Header = () => {
               
               {/* Collections Dropdown */}
               {isCollectionsOpen && (
-                <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-100 p-6 animate-fade-in">
+                <div className="absolute top-full left-0 w-80 bg-white rounded-lg shadow-xl border border-gray-100 p-6 animate-fade-in">
                   <div className="space-y-4">
                     {collections.map((collection, index) => (
                       <Link 
                         key={index} 
-                        to="/collections"
+                        to={"/collections"}
                         className="group cursor-pointer p-3 rounded-md hover:bg-gray-50 transition-colors duration-200 block"
                       >
                         <h3 className="font-semibold text-luxury-charcoal group-hover:text-luxury-plum transition-colors duration-200">
@@ -59,35 +59,35 @@ const Header = () => {
                         <p className="text-sm text-luxury-stone mt-1">{collection.description}</p>
                       </Link>
                     ))}
-                    <Link 
+                    {/* <Link 
                       to="/collections"
                       className="block pt-4 border-t border-gray-100 text-luxury-plum hover:text-luxury-plum/80 font-medium"
                     >
                       View All Collections →
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               )}
             </div>
             
             <Link to="/about" className="text-luxury-charcoal hover:text-luxury-plum transition-colors duration-200 font-medium">About</Link>
-            <a href="#" className="text-luxury-charcoal hover:text-luxury-plum transition-colors duration-200 font-medium">Sustainability</a>
+            {/* <a href="#" className="text-luxury-charcoal hover:text-luxury-plum transition-colors duration-200 font-medium">Sustainability</a> */}
             <Link to="/contact" className="text-luxury-charcoal hover:text-luxury-plum transition-colors duration-200 font-medium">Contact</Link>
           </nav>
 
           {/* Right side icons */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="sm" className="hidden sm:flex" asChild>
+            <Button size="sm" className="hidden sm:flex bg-transparent hover:bg-white text-luxury-plum" asChild>
               <Link to="/search">
-                <Search className="h-5 w-5" />
+                <Search className="h-5 w-5"/>
               </Link>
             </Button>
-            <Button variant="ghost" size="sm" asChild>
+            <Button size="sm" className='bg-transparent hover:bg-white text-luxury-plum' asChild>
               <Link to="/profile">
                 <User className="h-5 w-5" />
               </Link>
             </Button>
-            <Button variant="ghost" size="sm" className="relative" asChild>
+            <Button size="sm" className="relative bg-transparent hover:bg-white text-luxury-plum" asChild>
               <Link to="/cart">
                 <ShoppingBag className="h-5 w-5" />
                 <span className="absolute -top-1 -right-1 bg-luxury-rose text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
@@ -117,7 +117,7 @@ const Header = () => {
                 {collections.map((collection, index) => (
                   <Link 
                     key={index} 
-                    to="/collections" 
+                    to={null} 
                     className="block pl-4 py-2 text-luxury-stone hover:text-luxury-plum transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -132,13 +132,6 @@ const Header = () => {
               >
                 About
               </Link>
-              <a 
-                href="#" 
-                className="block py-2 text-luxury-charcoal hover:text-luxury-plum transition-colors duration-200 font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Sustainability
-              </a>
               <Link 
                 to="/contact" 
                 className="block py-2 text-luxury-charcoal hover:text-luxury-plum transition-colors duration-200 font-medium"
@@ -149,7 +142,7 @@ const Header = () => {
               <div className="pt-4 border-t border-gray-100 flex space-x-4">
                 <Link to="/search" onClick={() => setIsMenuOpen(false)}>
                   <Button variant="ghost" size="sm">
-                    <Search className="h-5 w-5" />
+                    <Search className="h-5 w-5 " />
                   </Button>
                 </Link>
                 <Link to="/profile" onClick={() => setIsMenuOpen(false)}>

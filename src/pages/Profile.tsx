@@ -14,7 +14,7 @@ const Profile = () => {
     { id: 'settings', label: 'Account Settings', icon: Settings, path: '/account-settings' },
     { id: 'orders', label: 'Order History', icon: Package, path: '/order-history' },
     { id: 'wishlist', label: 'Wishlist', icon: Heart, path: '/wishlist' },
-    { id: 'payments', label: 'Payment Methods', icon: CreditCard, path: '/payment-methods' },
+    // { id: 'payments', label: 'Payment Methods', icon: CreditCard, path: '/payment-methods' },
     { id: 'addresses', label: 'Addresses', icon: MapPin, path: '/address-manager' }
   ];
 
@@ -92,7 +92,7 @@ const Profile = () => {
                     <h3 className="text-xl font-semibold text-luxury-charcoal mb-2">Recent Orders</h3>
                     <p className="text-luxury-stone mb-4">Your recent purchases</p>
                     <Link to="/order-history">
-                      <Button variant="outline" className="w-full">View All Orders</Button>
+                      <Button className="w-full bg-black text-white hover:bg-luxury-plum">View All Orders</Button>
                     </Link>
                   </div>
                   
@@ -104,7 +104,7 @@ const Profile = () => {
                     <h3 className="text-xl font-semibold text-luxury-charcoal mb-2">Wishlist Items</h3>
                     <p className="text-luxury-stone mb-4">Items saved for later</p>
                     <Link to="/wishlist">
-                      <Button variant="outline" className="w-full">View Wishlist</Button>
+                      <Button className="w-full bg-black text-white hover:bg-luxury-plum">View Wishlist</Button>
                     </Link>
                   </div>
                   
@@ -115,7 +115,7 @@ const Profile = () => {
                     </div>
                     <h3 className="text-xl font-semibold text-luxury-charcoal mb-2">Loyalty Points</h3>
                     <p className="text-luxury-stone mb-4">Available to redeem</p>
-                    <Button variant="outline" className="w-full">Redeem Points</Button>
+                    <Button className="w-full bg-black text-white hover:bg-luxury-plum">Redeem Points</Button>
                   </div>
                   
                   <div className="p-6 bg-luxury-cream rounded-2xl hover:shadow-md transition-shadow">
@@ -125,11 +125,11 @@ const Profile = () => {
                     </div>
                     <h3 className="text-xl font-semibold text-luxury-charcoal mb-2">Membership</h3>
                     <p className="text-luxury-stone mb-4">Enjoy exclusive benefits</p>
-                    <Button variant="outline" className="w-full">View Benefits</Button>
+                    <Button className="w-full bg-black text-white hover:bg-luxury-plum">View Benefits</Button>
                   </div>
                 </div>
 
-                {/* Quick Actions */}
+                {/* Quick Actions
                 <div className="border-t border-gray-200 pt-8">
                   <h3 className="text-xl font-semibold text-luxury-charcoal mb-4">Quick Actions</h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -158,7 +158,7 @@ const Profile = () => {
                       </Button>
                     </Link>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
