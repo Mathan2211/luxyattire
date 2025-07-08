@@ -285,7 +285,7 @@ const Checkout = () => {
                       type="submit"
                       className="w-full bg-luxury-rose hover:bg-luxury-rose/90 text-white py-3 text-lg"
                     >
-                      Complete Order - ${total}
+                      Complete Order - Rs. {total}
                     </Button>
                   </form>
                 </CardContent>
